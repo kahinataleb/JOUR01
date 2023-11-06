@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation de rotation</title>
+    <style>
+      .carre {
+        padding: 5em;
+        background-color: rgb(61, 54, 45);
+        transition: transform 5s;
+      }
+
+      .main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+      }
+
+      /* Ajoutez une classe pour l'animation */
+      .rotate {
+        animation: rotation 5s linear infinite;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <p class="carre rotate"></p>
+    </div>
+    <div class="main">
+      <p class="carre rotate"></p>
+      <p class="carre rotate"></p>
+    </div>
+    <div class="main">
+      <p class="carre rotate"></p>
+      <p class="carre rotate"></p>
+      <p class="carre rotate"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(
+              2,
+              1fr
+            ); /* Deux colonnes de largeur égale */
+            grid-gap: 10px; /* Espacement entre les éléments */
+          }
+
+          .grid-item {
+            text-align: center;
+            padding: 5em;
+            border: 1px solid #000;
+          }
+
+          .grid-item:nth-child(1),
+          .grid-item:nth-child(2),
+          .grid-item:nth-child(3) {
+            grid-row: 1; /* Les éléments 1, 2, 3 sont dans la première ligne */
+          }
+
+          .grid-item:nth-child(4) {
+            grid-row: 4;
+            grid-row: 1 / span 2; /* Il occupe les deux colonnes */
+          }
+
+          .grid-item:nth-child(5),
+          .grid-item:nth-child(6),
+          .grid-item:nth-child(7) {
+            grid-row: 2; /* Les éléments 5, 6, 7 sont dans la troisième ligne */
+          }
+          .bleu {
+            background-color: blue;
+          }
+          .red {
+            background-color: rgb(255, 0, 30);
+          }
+          .yelew {
+            background-color: yellow;
+          }
+          .green {
+            background-color: green;
+          }
+          /* Pour les écrans mobiles (ajustez les règles media queries en fonction de vos besoins) */
+          @media (max-width: 768px) {
+            .grid-item:nth-child(1),
+            .grid-item:nth-child(2) {
+              grid-row: 1;
+              grid-column: 0 / span 2;
+            }
+
+            .grid-item:nth-child(3) {
+              grid-row: 2; /* L'élément 3 est dans la deuxième ligne */
+              grid-column: 1 / span 2; /* Il occupe deux colonnes */
+            }
+
+            .grid-item:nth-child(4) {
+              grid-row: 3; /* L'élément 4 est dans la troisième ligne */
+              grid-column: 2 / span 2; /* Il occupe deux colonnes */
+            }
+            .grid-item:nth-child(5) {
+              grid-row: 3; /* L'élément 4 est dans la troisième ligne */
+              grid-column: 2 / span 2; /* Il occupe deux colonnes */
+            }
+
+            .grid-item:nth-child(6) {
+              grid-row: 4; /* Les éléments 5 et 6 sont dans la quatrième ligne */
+              grid-column: 1; /* Ils occupent une seule colonne */
+            }
+
+            .grid-item:nth-child(7) {
+              grid-row: 5; /* L'élément 7 est dans la cinquième ligne */
+              grid-column: 1 / span 2; /* Il occupe deux colonnes */
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="grid-container">
+          <div class="grid-item red">1</div>
+          <div class="grid-item bleu">2</div>
+          <div class="grid-item yelew">3</div>
+          <div class="grid-item bleu">4</div>
+          <div class="grid-item bleu">5</div>
+          <div class="grid-item green">6</div>
+          <div class="grid-item bleu">7</div>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
+
+

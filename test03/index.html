@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div>
+      <h1>Vérification de pair ou impair</h1>
+      <input type="number" id="inputNumber" placeholder="Entrez un nombre" />
+      <button onclick="checkNumber()">Vérifier</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function checkNumber() {
+        let inputNumber = document.getElementById("inputNumber").value;
+        let resultElement = document.getElementById("result");
+
+        if (!isNaN(inputNumber)) {
+          if (inputNumber % 2 === 0) {
+            resultElement.textContent = inputNumber + " est un nombre pair.";
+          } else {
+            resultElement.textContent = inputNumber + " est un nombre impair.";
+          }
+        } else {
+          resultElement.textContent = "Ce n'est pas un nombre valide.";
+        }
+      }
+    </script>
+  </body>
+</html>
